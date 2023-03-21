@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Cartitem.css";
-import { Dialog } from "@mui/material";
+import { Button, Dialog } from "@mui/material";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { products } from "../productList/products";
 
@@ -36,14 +36,21 @@ const CartItem = () => {
 
             <ul>
               {products.map((item) => (
-                <div id={item.id}>
-                  <img
-                    className="image"
-                    src={item?.imageUrl}
-                    alt="product_image"
-                  />
-                  <div>{item.title}</div>
-                  <div>{item.price}</div>
+                <div className="list">
+                  <div id={item.id}>
+                    <img
+                      className="image"
+                      src={item?.imageUrl}
+                      alt="product_image"
+                    />
+                    <div>{item.title}</div>
+                    <div>{item.price}</div>
+                  </div>
+                  <div>
+                    <Button variant="contained" color="warning">
+                      Remove
+                    </Button>
+                  </div>
                 </div>
               ))}
             </ul>
