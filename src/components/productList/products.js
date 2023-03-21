@@ -1,12 +1,8 @@
-
-
 export const products = [
   {
     title: "Colors",
 
     price: 100,
-
-   
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
   },
