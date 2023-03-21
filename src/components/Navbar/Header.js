@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CartItem from "../Cart/CartItem";
 import "./Header.css";
 
@@ -9,19 +9,19 @@ const Header = () => {
       <nav>
         <ul className="nav_item">
           <li>
-            <Link to="/">Home</Link>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/about">About</Link>
+            <NavLink to="/about">About</NavLink>
           </li>
           <li>
-            <Link to="/store">Store</Link>
+            <NavLink to="/store">Store</NavLink>
           </li>
           <li>
-            <Link to="/Features">Features</Link>
+            <NavLink to="/Features">Features</NavLink>
           </li>
           <li>
-            <Link to="/Features">Features</Link>
+            <NavLink to="/Features">Features</NavLink>
           </li>
           <CartItem />
         </ul>

@@ -1,0 +1,34 @@
+.about {
+    background-color: #7c6c54;
+    height: 10rem;
+    text-align: center;
+    max-width: 100%;
+    margin: auto;
+    
+}
+
+.about h1 {
+  font-family: 'Times New Roman', Times, serif;
+   padding: 3rem;
+   color: white;
+   font-weight: 800;
+   font-size: 4rem;
+}
+.image {
+    width: 20%;
+    height: 20%;
+    border-radius: 100%;
+}
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+   padding: 3rem;
+   color: rgb(17, 10, 10);
+   font-weight: 800;
+   font-size: 2rem;
+   text-align: center;
+}
+.about_page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
