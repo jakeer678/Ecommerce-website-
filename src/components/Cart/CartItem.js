@@ -36,21 +36,20 @@ const CartItem = () => {
 
             <ul>
               {products.map((item) => (
-                <div className="list">
-                  <div id={item.id}>
+                <div id={item.id} className="list">
+                  <div>
                     <img
                       className="image"
                       src={item?.imageUrl}
                       alt="product_image"
                     />
-                    <div>{item.title}</div>
-                    <div>{item.price}</div>
+                    <p>{item.title}</p>
+                    <p>{item.price}</p>
                   </div>
-                  <div>
-                    <Button variant="contained" color="warning">
-                      Remove
-                    </Button>
-                  </div>
+
+                  <Button variant="contained" color="warning">
+                    Remove
+                  </Button>
                 </div>
               ))}
             </ul>
