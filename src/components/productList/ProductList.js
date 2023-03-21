@@ -8,7 +8,7 @@ const ProductList = () => {
     <div>
       <ul className="list">
         {products?.map((item) => (
-          <div key={item.title}>
+          <div key={item.id}>
             <div className="imagelist">
               <img src={item?.imageUrl} alt="product_image" />
             </div>

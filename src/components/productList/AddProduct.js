@@ -7,7 +7,7 @@ const AddProduct = (props) => {
 
   const handleAddProduct = (event) => {
     event.preventDefault();
-    const id = props.id;
+    const id = props.id
     addproducts(props.item, id);
   };
 

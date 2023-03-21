@@ -1,12 +1,16 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Cartitem.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { Dialog } from "@mui/material";
 import CarList from "./CarList";
+import { contextProduct } from "../store/contextstore";
 
 const CartItem = () => {
   const [open, setOpen] = useState(false);
+  const { list } = useContext(contextProduct);
+
+  const quantity = list.length + 1;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -20,7 +24,7 @@ const CartItem = () => {
       <button className="cart_container" onClick={handleClickOpen}>
         <div className="cart_text">Cart</div>
         <div>
-          <AddShoppingCartIcon>{}</AddShoppingCartIcon>
+          <AddShoppingCartIcon>{quantity}</AddShoppingCartIcon>
         </div>
       </button>
 
@@ -29,7 +33,7 @@ const CartItem = () => {
           <div className="button_close">
             <h4>Cart Products</h4>
             <button onClick={handleClose}>
-              <HighlightOffIcon />
+              <HighlightOffIcon></HighlightOffIcon>
             </button>
           </div>
           <CarList />

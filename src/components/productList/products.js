@@ -1,5 +1,6 @@
 export const products = [
   {
+    id:1,
     title: "Colors",
 
     price: 100,
@@ -8,6 +9,7 @@ export const products = [
   },
 
   {
+    id:2,
     title: "Black Colors",
 
     price: 50,
@@ -16,6 +18,7 @@ export const products = [
   },
 
   {
+    id:3,
     title: "Yellow Colors",
 
     price: 70,
@@ -24,6 +27,7 @@ export const products = [
   },
 
   {
+    id:4,
     title: "Blue Color",
 
     price: 100,

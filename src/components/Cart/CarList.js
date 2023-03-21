@@ -9,7 +9,7 @@ const CarList = () => {
   return (
     <Fragment>
       <ul>
-        {list.map((item) => (
+        {list?.map((item) => (
           <div id={item.id} className="list">
             <div>
               <img className="image" src={item?.imageUrl} alt="product_image" />
