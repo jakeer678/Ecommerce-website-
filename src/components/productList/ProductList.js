@@ -1,6 +1,7 @@
 import React from "react";
 import { products } from "./products";
 import "./ProductList.css";
+import AddProduct from "./AddProduct";
 
 const ProductList = () => {
   return (
@@ -16,12 +17,7 @@ const ProductList = () => {
                 <li>{item.title}</li>
                 <li>${item.price}</li>
               </div>
-
-              <div>
-                <button type="button" class="btn btn-primary">
-                  Add to cart
-                </button>
-              </div>
+              <AddProduct id={item.id} item={item} />
             </div>
           </div>
         ))}

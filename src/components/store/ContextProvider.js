@@ -1,20 +1,26 @@
 import { useState } from "react";
 import { contextProduct } from "./contextstore";
-const ConextProvider = (props) => {
+const ConextProvider = ({ children }) => {
   const [list, setList] = useState([]);
 
   const addproducts = (item) => {
     setList([...list, item]);
   };
-
-  const contextData = {
-    list,
-    addproducts,
-  };
+ 
+  const removePRoducts = (Id) => {
+    const remove = list.filter(item=>item.id!==Id)
+    setList(remove)
+  }
 
   return (
-    <contextProduct.Provider value={contextData}>
-      {props.children}
+    <contextProduct.Provider
+      value={{
+        list: list,
+        addproducts: addproducts,
+        removePRoducts:removePRoducts
+      }}
+    >
+      {children}
     </contextProduct.Provider>
   );
 };

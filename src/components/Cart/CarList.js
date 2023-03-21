@@ -1,13 +1,15 @@
 import { Button } from "@mui/material";
-import React, { Fragment } from "react";
-import { products } from "../productList/products";
+import React, { Fragment, useContext } from "react";
+import { contextProduct } from "../store/contextstore";
 import "./CartList.css";
 
 const CarList = () => {
+  const { list, removePRoducts } = useContext(contextProduct);
+
   return (
     <Fragment>
       <ul>
-        {products.map((item) => (
+        {list.map((item) => (
           <div id={item.id} className="list">
             <div>
               <img className="image" src={item?.imageUrl} alt="product_image" />
@@ -15,7 +17,11 @@ const CarList = () => {
               <p>{item.price}</p>
             </div>
 
-            <Button variant="contained" color="warning">
+            <Button
+              variant="contained"
+              color="warning"
+              onClick={() => removePRoducts(item.id)}
+            >
               Remove
             </Button>
           </div>

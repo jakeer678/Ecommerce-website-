@@ -5,11 +5,14 @@ import React from "react";
 // import Store from "./components/Home/Store";
 import Header from "./components/Navbar/Header";
 import ProductList from "./components/productList/ProductList";
+import ConextProvider from "./components/store/ContextProvider";
 
 function App() {
   return (
     
     <React.Fragment>
+     <ConextProvider>
+
      
         {/* <div>
          
@@ -31,6 +34,7 @@ function App() {
       
         <Header />
       <ProductList />
+      </ConextProvider>
     </React.Fragment>
   );
 }
