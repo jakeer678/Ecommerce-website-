@@ -8,14 +8,14 @@ const ProductList = () => {
     <div>
       <ul className="list">
         {products?.map((item) => (
-          <div key={item.id}>
+          <div key={item?.id}>
             <div className="imagelist">
               <img src={item?.imageUrl} alt="product_image" />
             </div>
             <div className="list_item">
               <div>
-                <li>{item.title}</li>
-                <li>${item.price}</li>
+                <li>{item?.title}</li>
+                <li>${item?.price}</li>
               </div>
               <AddProduct id={item.id} item={item} />
             </div>

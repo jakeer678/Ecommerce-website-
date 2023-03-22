@@ -1,14 +1,12 @@
 import React from "react";
-import Header from "../Navbar/Header";
 import ProductList from "../productList/ProductList";
 
-const Store = () => {
+const ProductStore = () => {
   return (
     <div>
-      <Header />
       <ProductList />
     </div>
   );
 };
 
-export default Store;
+export default ProductStore;

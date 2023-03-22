@@ -5,12 +5,13 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div classname="cotainer">
+    <div className="cotainer">
       <nav>
         <ul className="nav_item">
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
+          
           <li>
             <NavLink to="/about">About</NavLink>
           </li>
@@ -18,10 +19,7 @@ const Header = () => {
             <NavLink to="/store">Store</NavLink>
           </li>
           <li>
-            <NavLink to="/Features">Features</NavLink>
-          </li>
-          <li>
-            <NavLink to="/Features">Features</NavLink>
+            <NavLink to="/contact">Contact</NavLink>
           </li>
           <CartItem />
         </ul>

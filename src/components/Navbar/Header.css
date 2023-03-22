@@ -12,3 +12,12 @@ font-size: 1.1rem;
 
      
 }
+
+.nav_item a {
+    color: white;
+    text-decoration: none;
+    
+}
+.nav_item  li {
+    list-style: none;
+}
