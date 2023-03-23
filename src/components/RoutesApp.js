@@ -6,6 +6,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import NoPage from "./pages/NoPage";
 import ProductStore from "./pages/ProductStore";
+import ProductPage from "./productList/ProductPage";
 
 const RoutesApp = () => {
   return (
@@ -25,6 +26,7 @@ const RoutesApp = () => {
             <Route path="/store" element={<ProductStore />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NoPage />} />
+            <Route path="/products/:productId" element={<ProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

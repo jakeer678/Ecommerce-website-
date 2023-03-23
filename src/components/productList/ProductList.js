@@ -2,6 +2,7 @@ import React from "react";
 import { products } from "./products";
 import "./ProductList.css";
 import AddProduct from "./AddProduct";
+import { Link } from "react-router-dom";
 
 const ProductList = () => {
   return (
@@ -10,11 +11,15 @@ const ProductList = () => {
         {products?.map((item) => (
           <div key={item?.id}>
             <div className="imagelist">
-              <img src={item?.imageUrl} alt="product_image" />
+              <Link to={`products/${item.id}`}>
+                <img src={item?.imageUrl} alt="product_image" />
+              </Link>
             </div>
             <div className="list_item">
               <div>
-                <li>{item?.title}</li>
+                <li>
+                  <Link to={`products/${item.id}`}>{item?.title}</Link>{" "}
+                </li>
                 <li>${item?.price}</li>
               </div>
               <AddProduct id={item.id} item={item} />

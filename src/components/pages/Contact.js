@@ -12,7 +12,7 @@ const Contact = () => {
     const response = await fetch(
       "https://login-782e7-default-rtdb.firebaseio.com//login",
       {
-        mode: 'no-cors',
+        mode: 'cors',
         method: "POST",
         body: JSON.stringify(user),
         headers: {
