@@ -1,8 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { products } from "./products";
-import './ProductPage.css'
-
+import "./ProductPage.css";
 
 const ProductPage = () => {
   const params = useParams();

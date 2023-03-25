@@ -3,7 +3,7 @@ import "./About.css";
 
 const About = () => {
   return (
-    <div>
+    <>
       <div className="about">
         <h1>The Generics</h1>
       </div>
@@ -39,7 +39,7 @@ const About = () => {
           him? Him whom something large cisterns.
         </p>
       </div>
-    </div>
+    </>
   );
 };
 

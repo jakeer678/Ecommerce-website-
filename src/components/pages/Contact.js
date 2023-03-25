@@ -10,9 +10,8 @@ const Contact = () => {
   async function addloginDetails(user) {
     console.log(user);
     const response = await fetch(
-      "https://login-782e7-default-rtdb.firebaseio.com//login",
+      "https://login-782e7-default-rtdb.firebaseio.com/login",
       {
-        mode: 'cors',
         method: "POST",
         body: JSON.stringify(user),
         headers: {
@@ -20,12 +19,11 @@ const Contact = () => {
         },
       }
     );
-
     const data = response.json();
     console.log(data);
   }
-  const submitHandler = (e) => {
-    e.preventDefault();
+  const submitHandler = (event) => {
+    event.preventDefault();
     const users = {
       name: nameRef.current.value,
       email: emailRef.current.value,
@@ -38,22 +36,24 @@ const Contact = () => {
   return (
     <>
       <form onSubmit={submitHandler} className="login">
-        <div className="control">
-          <label htmlFor="name">Name</label>
-          <input type="name" ref={nameRef} />
-        </div>
-        <div className="control">
-          <label htmlFor="email">E-Mail</label>
-          <input type="email" ref={emailRef} />
-        </div>
-        <div className="control">
-          <label htmlFor="password">Password</label>
-          <input type="password" ref={passwordRef} />
-        </div>
-        <div className="actions">
-          <Button type="submit" variant="contained" className="btn">
-            Login
-          </Button>
+        <div className="container">
+          <div className="control">
+            <label htmlFor="name">Name</label>
+            <input type="name" ref={nameRef} />
+          </div>
+          <div className="control">
+            <label htmlFor="email">E-Mail</label>
+            <input type="email" ref={emailRef} />
+          </div>
+          <div className="control">
+            <label htmlFor="password">Password</label>
+            <input type="password" ref={passwordRef} />
+          </div>
+          <div className="actions">
+            <Button type="submit" variant="contained" className="btn">
+              submit
+            </Button>
+          </div>
         </div>
       </form>
     </>

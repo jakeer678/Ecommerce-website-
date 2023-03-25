@@ -4,6 +4,7 @@ import Header from "./Navbar/Header";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
+import LoginAuth from "./pages/LoginAuth";
 import NoPage from "./pages/NoPage";
 import ProductStore from "./pages/ProductStore";
 import ProductPage from "./productList/ProductPage";
@@ -25,6 +26,7 @@ const RoutesApp = () => {
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<ProductStore />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/loginAuth" element={<LoginAuth />} />
             <Route path="*" element={<NoPage />} />
             <Route path="/products/:productId" element={<ProductPage />} />
           </Route>

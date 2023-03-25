@@ -31,7 +31,7 @@ const CartItem = () => {
       <Dialog open={open} fullWidth={true} maxWidth={"sm"}>
         <div className="cartlist">
           <div className="button_close">
-            <h4>Cart Products</h4>
+            <h5>Cart Products</h5>
             <button onClick={handleClose}>
               <HighlightOffIcon></HighlightOffIcon>
             </button>
