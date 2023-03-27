@@ -3,10 +3,11 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
 import Header from "./Navbar/Header";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
-import Home from "./pages/Home";
+
 import LoginAuth from "./pages/LoginAuth";
 import NoPage from "./pages/NoPage";
 import ProductStore from "./pages/ProductStore";
+import StartingPage from "./pages/StartingPage";
 import ProductPage from "./productList/ProductPage";
 
 const RoutesApp = () => {
@@ -22,7 +23,7 @@ const RoutesApp = () => {
               </div>
             }
           >
-            <Route path="/" element={<Home />} />
+            <Route path="/" exact element={<StartingPage />} />
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<ProductStore />} />
             <Route path="/contact" element={<Contact />} />

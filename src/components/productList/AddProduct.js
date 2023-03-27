@@ -5,8 +5,9 @@ import { contextProduct } from "../store/contextstore";
 const AddProduct = (props) => {
   const { addproducts } = useContext(contextProduct);
 
-  const handleAddProduct = (event) => {
+  const handleAddProduct = async (event) => {
     event.preventDefault();
+
     const id = props.id;
     addproducts(props.item, id);
   };

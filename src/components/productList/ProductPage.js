@@ -6,7 +6,7 @@ import "./ProductPage.css";
 const ProductPage = () => {
   const params = useParams();
 
-  const productDeatail = products?.find((item) => item.id == params.productId);
+  const productDeatail = products?.find((item) => item.id === params.productId);
   console.log(products, "iiiiii");
   return (
     <div>

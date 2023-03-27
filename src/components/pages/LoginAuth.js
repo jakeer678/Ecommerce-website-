@@ -54,7 +54,7 @@ const LoginAuth = () => {
         }
       })
       .then((data) => {
-        // srtoring data in authContext
+        // srtoring data in ContextProduct
         alert("success");
         LoginUserHandle(data.idToken);
         navigate("/");

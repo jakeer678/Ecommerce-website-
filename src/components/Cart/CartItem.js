@@ -3,14 +3,14 @@ import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Cartitem.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { Dialog } from "@mui/material";
-import CarList from "./CarList";
+import CartList from "./CartList";
 import { contextProduct } from "../store/contextstore";
 
 const CartItem = () => {
   const [open, setOpen] = useState(false);
   const { list } = useContext(contextProduct);
 
-  const quantity = list.length + 1;
+  const quantity = list.length;
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -19,12 +19,21 @@ const CartItem = () => {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const total = list.reduce((acc, cur) => {
+    return acc + cur.price;
+  }, 0);
+
+  const totalAmount = total.toFixed(2);
+
   return (
     <>
       <button className="cart_container" onClick={handleClickOpen}>
         <div className="cart_text">Cart</div>
         <div>
-          <AddShoppingCartIcon>{quantity}</AddShoppingCartIcon>
+          <AddShoppingCartIcon>
+            <span>{quantity}</span>
+          </AddShoppingCartIcon>
         </div>
       </button>
 
@@ -36,7 +45,8 @@ const CartItem = () => {
               <HighlightOffIcon></HighlightOffIcon>
             </button>
           </div>
-          <CarList />
+          <CartList />
+          <div>Tota amount $ {totalAmount}</div>
         </div>
       </Dialog>
     </>

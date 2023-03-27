@@ -8,3 +8,11 @@
     align-items: center;
    
 }
+.cartbtn {
+   display: flex;
+   align-items: center;
+   
+}
+.cartbtnadd {
+    margin-left: 1rem;
+}

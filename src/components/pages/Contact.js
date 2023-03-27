@@ -1,36 +1,35 @@
 import { Button } from "@mui/material";
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Contact.css";
 
 const Contact = () => {
   const nameRef = useRef("");
   const emailRef = useRef("");
   const passwordRef = useRef("");
+  const navigate = useNavigate();
 
-  async function addloginDetails(user) {
-    console.log(user);
-    const response = await fetch(
-      "https://login-782e7-default-rtdb.firebaseio.com/login",
-      {
-        method: "POST",
-        body: JSON.stringify(user),
-        headers: {
-          "contet-Type": "application/json",
-        },
-      }
-    );
-    const data = response.json();
-    console.log(data);
-  }
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
-    const users = {
+    const userData = {
       name: nameRef.current.value,
       email: emailRef.current.value,
       password: passwordRef.current.value,
     };
 
-    addloginDetails(users);
+    const response = await fetch(
+      "https://login-782e7-default-rtdb.firebaseio.com/userData/userData.json",
+      {
+        method: "POST",
+        body: JSON.stringify(userData),
+        headers: {
+          "contet-Type": "application/json",
+        },
+      }
+    );
+    const data = await response.json();
+    navigate("/");
+    console.log(data);
   };
 
   return (
