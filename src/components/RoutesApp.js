@@ -4,7 +4,7 @@ import Header from "./Navbar/Header";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
-import LoginAuth from "./pages/LoginAuth";
+import LoginAuth from "./Login/LoginAuth";
 import NoPage from "./pages/NoPage";
 import ProductStore from "./pages/ProductStore";
 import StartingPage from "./pages/StartingPage";
