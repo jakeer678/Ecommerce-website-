@@ -8,10 +8,10 @@ const ConextProvider = ({ children }) => {
   const [loginUserToken, setLoginUserToken] = useState(initialValue);
   const [open, setOpen] = useState(false);
 
+  console.log(list, "kkkkkkkkkk");
+  // const userEmail = localStorage.getItem("userEmail").replace(/['@','.']/g,"")
 
-// const userEmail = localStorage.getItem("userEmail").replace(/['@','.']/g,"")
-
-// console.log(userEmail, "kkkkkkkkkkk")
+  // console.log(userEmail, "kkkkkkkkkkk")
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -33,23 +33,39 @@ const ConextProvider = ({ children }) => {
   const LogoutUserHandler = () => {
     setLoginUserToken(null);
 
-    // localStorage.removeItem("idToken", loginUserToken);
     localStorage.clear();
   };
 
-  const setItems = async () => {
-    const response = await axios.get(`https://crudcrud.com/api/e9abe45a40cd4e4f84ec7f42b0fb4aad/cart${localStorage.getItem("userEmail").replace(/['@','.']/g,"")}`)
-    console.log('CrudCrud',response.data);
-    setList(response.data)
-  };
-  const addproducts = async (item) => {
+  // const setItems = async () => {
+  //   const response = await axios.get(
+  //     `https://crudcrud.com/api/895b1ae4481d4cb48bbd02a4387d8bcc/cart${localStorage
+  //       .getItem("userEmail")
+  //       .replace(/['@','.']/g, "")}`
+  //   );
 
-    const response = await axios.post(`https://crudcrud.com/api/e9abe45a40cd4e4f84ec7f42b0fb4aad/cart${localStorage.getItem("userEmail").replace(/['@','.']/g,"")}`
-    ,{list}
+  //   setList(response.data);
+  // };
+
+  const removePRoducts = async (Id) => {
+    const response = await axios.delete(
+      `https://crudcrud.com/api/7a84d116056d47f3b57eb161ba5a2852/cart${localStorage
+        .getItem("userEmail")
+        .replace(/['@','.']/g, "")}${Id}`
     );
-    console.log(response);
-    setItems();
-  }
+    console.log(response.data);
+  };
+
+  const addproducts = async (item) => {
+    const response = await axios.post(
+      `https://crudcrud.com/api/7a84d116056d47f3b57eb161ba5a2852/cart${localStorage
+        .getItem("userEmail")
+        .replace(/['@','.']/g, "")}`,
+      item
+    );
+    console.log(response.data);
+    setList([...response.data]);
+    // setItems();
+  };
 
   //Adding Products to the cart
   // const addproducts = (item) => {
@@ -57,17 +73,19 @@ const ConextProvider = ({ children }) => {
   // };
 
   //Removing products from the cart
-  const removePRoducts = (Id) => {
-    const remove = list.filter((item) => item.id !== Id);
-    setList(remove);
-  };
+  // const removePRoducts = (Id) => {
+  //   const remove = list.filter((item) => item.id !== Id);
+  //   setList(remove);
+  // };
 
   //remove all products from the cart
   const removePRoductsAll = (Id) => {
     const remove = list.filter((item) => item.id === Id);
     setList(remove);
   };
-
+  useEffect(() => {
+    addproducts();
+  }, [loginUserToken]);
   return (
     <contextProduct.Provider
       value={{
@@ -78,7 +96,7 @@ const ConextProvider = ({ children }) => {
         LoginUserHandle: LoginUserHandle,
         LogoutUserHandler: LogoutUserHandler,
         loginUserToken: loginUserToken,
-        setList: setList,
+        // setList: setList,
         removePRoductsAll: removePRoductsAll,
         handleClickOpen: handleClickOpen,
         open: open,

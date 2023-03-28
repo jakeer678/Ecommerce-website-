@@ -11,10 +11,13 @@ const CartItem = () => {
     useContext(contextProduct);
 
   const quantity = list.length;
-
+console.log(list,"oooiiiiiiiiii")
   const total = list.reduce((acc, cur) => {
     return acc + cur.price;
   }, 0);
+
+
+  
 
   const totalAmount = total.toFixed(2);
 

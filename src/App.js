@@ -8,6 +8,7 @@ function App() {
     <React.Fragment>
       <ConextProvider>
         <RoutesApp />
+        <Footer />
       </ConextProvider>
     </React.Fragment>
   );

@@ -27,9 +27,10 @@ const RoutesApp = () => {
             <Route path="/about" element={<About />} />
             <Route path="/store" element={<ProductStore />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/store/products/:productId" element={<ProductPage />} />
             <Route path="/loginAuth" element={<LoginAuth />} />
             <Route path="*" element={<NoPage />} />
-            <Route path="product/:productId" element={<ProductPage />} />
+           
           </Route>
         </Routes>
       </BrowserRouter>

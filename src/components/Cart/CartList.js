@@ -27,7 +27,7 @@ const CartList = () => {
   //   fetchCartItems();
   // }, [loginUserToken]);
 
-  //   console.log(list,"oooooooooooooo")
+  console.log(list, "oooooooooooooo");
   // const listTwo = []
 
   // for(let key in list) {

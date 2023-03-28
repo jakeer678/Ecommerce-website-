@@ -5,12 +5,13 @@
     list-style: none; 
     display: grid;
     grid-template-columns: auto auto ;
-   
+   width: 100%;
     padding: 10px 10px;
     justify-content: space-evenly;
     align-items: center;
     padding-top: 5rem;
     row-gap: 2rem;
+    color: rgb(2, 15, 26);
     
 }
 

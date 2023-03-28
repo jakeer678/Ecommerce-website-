@@ -28,6 +28,7 @@ const ProductList = () => {
                   <li>${item?.price}</li>
                 </div>
                 <AddProduct id={item.id} item={item} />
+                {console.log(item,"jakeeeeeeee")}
               </div>
             </div>
           ))}
