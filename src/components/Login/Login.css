@@ -3,8 +3,8 @@
     width: 95%;
     max-width: 30rem;
     border-radius: 6px;
-    background-color : rgb(0, 2, 3);
-    color : #f0eded;
+    background-image: url('https://neilpatel.com/wp-content/uploads/fly-images/104431/ecommerce-sales-ads-4-1200x675-c.png');
+   
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
     padding: 1rem;
     
@@ -13,7 +13,7 @@
   
   .auth h1 {
     text-align: center;
-    color: white;
+    color: rgb(255, 255, 255);
   }
   
   .control {
@@ -49,16 +49,16 @@
     cursor: pointer;
     font: inherit;
     color: white;
-    background-color: #45a049;
+    background-color: #c92323;
     
-    border: 1px solid #45a049;
+    border: 1px solid #fd095a;
     border-radius: 4px;
     padding: 0.5rem 2.5rem;
     margin-top: 0.7rem;
   }
   
   .actions button:hover {
-    background-color: #45a049;
+    background-color: #e61453;
     border-color: #873abb;
   }
   

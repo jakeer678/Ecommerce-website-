@@ -1,13 +1,23 @@
-import React from "react";
+import { Button } from "@mui/material";
+
+import React, { useContext } from "react";
+import { contextProduct } from "../store/contextstore";
 
 const ProductTab = () => {
+  const myStyle = {
+    width: "100%",
+    height: "80vh",
+  };
   return (
-    <div>
-      <img
-        src="https://www.edesk.com/wp-content/uploads/2021/03/find-trending-products-sell-ecommerce.png"
-        alt="imgg"
-      />
-    </div>
+    <>
+      <section>
+        <img
+          style={myStyle}
+          src="https://png.pngtree.com/thumb_back/fh260/background/20220522/pngtree-ecommerce-banner-planning-segmentation-selection-image_1375247.jpg"
+          alt="imgg"
+        />
+      </section>
+    </>
   );
 };
 

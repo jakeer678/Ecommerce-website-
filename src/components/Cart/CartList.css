@@ -1,18 +1,41 @@
-.image {
-    width: 3rem;
-    height: 2rem;
-}
+
 .list {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    overflow: hidden; 
+    display: block;
+    border-radius: 0.5rem rgb(146, 139, 139);
+    overflow: auto,
    
 }
 .cartbtn {
    display: flex;
    align-items: center;
+   padding: 1rem;
    
 }
 .cartbtnadd {
     margin-left: 1rem;
+    padding-left: 1rem;
+}
+
+.listitem {
+    border-bottom: 1px solid rgb(36, 32, 32);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.listitem img {
+    width: 4rem;
+    height: 4rem;
+  border-radius: 0.5rem;
+}
+.listitem p {
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding-left: 3rem;
+    font-size: 1.2rem;
 }

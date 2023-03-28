@@ -11,6 +11,7 @@ const Header = () => {
   const location = useLocation();
   console.log(location, "oooooopppp");
   const logout = () => {
+    alert("Are sure you want logout");
     LogoutUserHandler();
     navigate("/");
   };
@@ -22,57 +23,61 @@ const Header = () => {
       navigate("/loginAuth");
     }
   };
-
+  const loginPop = () => {
+    alert("Please login");
+  };
   return (
-    <header className="cotainer">
-      {!isloogedIn && (
-        <div>
-          <button onClick={loginhandleNav}>Products tab</button>
-        </div>
-      )}
+    <section>
+      <header className="cotainer">
+        {!isloogedIn && (
+          <div>
+            <button onClick={loginhandleNav}>Products tab</button>
+          </div>
+        )}
 
-      <nav>
-        <ul>
-          {isloogedIn && (
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-          )}
-          {isloogedIn && (
-            <li>
-              <NavLink to="/store">Store</NavLink>
-            </li>
-          )}
-          {isloogedIn && (
-            <li>
-              <NavLink to="/about">About</NavLink>
-            </li>
-          )}
+        <nav>
+          <ul>
+            {isloogedIn && (
+              <li>
+                <NavLink to="/">Home</NavLink>
+              </li>
+            )}
+            {isloogedIn && (
+              <li>
+                <NavLink to="/store">Store</NavLink>
+              </li>
+            )}
+            {isloogedIn && (
+              <li>
+                <NavLink to="/about">About</NavLink>
+              </li>
+            )}
 
-          {isloogedIn && (
-            <li>
-              <NavLink to="/contact">Contact</NavLink>
-            </li>
-          )}
-          {isloogedIn && (
-            <li>
-              <CartItem />
-            </li>
-          )}
-          {!isloogedIn && location.pathname == "/loginAuth" && (
-            <button>
-              <NavLink to="/loginAuth">Login</NavLink>
-            </button>
-          )}
+            {isloogedIn && (
+              <li>
+                <NavLink to="/contact">Contact</NavLink>
+              </li>
+            )}
+            {isloogedIn && (
+              <li>
+                <CartItem />
+              </li>
+            )}
+            {!isloogedIn && location.pathname == "/loginAuth" && (
+              <button onClick={loginPop}>
+                <NavLink to="/loginAuth">Login</NavLink>
+              </button>
+            )}
 
-          {isloogedIn && (
-            <li>
-              <button onClick={logout}>Logout</button>
-            </li>
-          )}
-        </ul>
-      </nav>
-    </header>
+            {isloogedIn && (
+              <li>
+                <button onClick={logout}>Logout</button>
+              </li>
+            )}
+          </ul>
+        </nav>
+      </header>
+    </section>
   );
 };
 

@@ -2,7 +2,7 @@ export const products = [
   {
     id: 1,
     title: "Colors",
-
+    qauntity:1,
     price: 100,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
@@ -13,7 +13,7 @@ export const products = [
   {
     id: 2,
     title: "Black Colors",
-
+    qauntity:2,
     price: 50,
 
     imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",

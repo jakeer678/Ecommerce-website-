@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
-import React, { Fragment, useContext,  } from "react";
+import React, { Fragment, useContext } from "react";
 import { contextProduct } from "../store/contextstore";
 import "./CartList.css";
 
 const CartList = () => {
-  const { list, removePRoducts,addproducts } = useContext(contextProduct);
+  const { list, removePRoducts, addproducts } = useContext(contextProduct);
 
   // useEffect(() => {
   //   const fetchCartItems = async () => {
@@ -26,14 +26,23 @@ const CartList = () => {
 
   //   fetchCartItems();
   // }, [loginUserToken]);
-   
+
+  //   console.log(list,"oooooooooooooo")
+  // const listTwo = []
+
+  // for(let key in list) {
+  //   listTwo.push({id:key,...list.item})
+
+  // }
+  // console.log(listTwo, "kkkkkjhgzggf")
+
   return (
     <Fragment>
       <ul>
         {list?.map((item) => (
           <div id={item.id} className="list">
-            <div>
-              <img className="image" src={item?.imageUrl} alt="product_image" />
+            <div className="listitem">
+              <img className="image" src={item.imageUrl} alt="product_image" />
               <p>{item.title}</p>
               <p>${item.price}</p>
             </div>
@@ -42,20 +51,24 @@ const CartList = () => {
                 <Button
                   variant="contained"
                   color="warning"
+                  size="small"
                   onClick={() => removePRoducts(item.id)}
                 >
                   Remove
                 </Button>
               </div>
               <div className="cartbtnadd">
-                <Button variant="contained" type="submit" onClick={()=>addproducts(item)}>
+                <Button
+                  variant="contained"
+                  type="submit"
+                  size="small"
+                  onClick={() => addproducts(item)}
+                >
                   Add
                 </Button>
               </div>
             </div>
-            
           </div>
-          
         ))}
       </ul>
     </Fragment>

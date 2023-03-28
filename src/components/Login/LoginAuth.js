@@ -56,7 +56,8 @@ const LoginAuth = () => {
       .then((data) => {
         // srtoring data in ContextProduct
         alert("success");
-        LoginUserHandle(data.idToken);
+        LoginUserHandle(data.idToken, enteredEmail);
+        
         navigate("/");
       })
       .catch((error) => {

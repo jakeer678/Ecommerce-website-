@@ -29,7 +29,7 @@ const RoutesApp = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/loginAuth" element={<LoginAuth />} />
             <Route path="*" element={<NoPage />} />
-            <Route path="/products/:productId" element={<ProductPage />} />
+            <Route path="product/:productId" element={<ProductPage />} />
           </Route>
         </Routes>
       </BrowserRouter>

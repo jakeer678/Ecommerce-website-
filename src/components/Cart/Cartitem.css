@@ -11,6 +11,9 @@
     font-size: 1rem;
     background-color:#0d6efd;
     border: none;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
     
 }
 
@@ -21,11 +24,32 @@
     justify-content: space-between;
     
 }
-.button_close h4 {
+h5 {
     margin-left: 2rem;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.7rem;
+    border-bottom: 1px solid black;
 }
 .button_close button  {
     margin-right: 2rem;
-    border: none;   
+    border: 1px solid rgb(209, 14, 160);  
+    width: 3rem; 
+    height: 2rem;
+    border-radius: 0.5rem;
+}
+.purchase {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-left: 14rem;
+}
+
+.total {
+    text-align: right;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5rem;
 }
 
