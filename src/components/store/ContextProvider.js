@@ -36,35 +36,37 @@ const ConextProvider = ({ children }) => {
     localStorage.clear();
   };
 
-  // const setItems = async () => {
-  //   const response = await axios.get(
-  //     `https://crudcrud.com/api/895b1ae4481d4cb48bbd02a4387d8bcc/cart${localStorage
-  //       .getItem("userEmail")
-  //       .replace(/['@','.']/g, "")}`
-  //   );
-
-  //   setList(response.data);
-  // };
-
-  const removePRoducts = async (Id) => {
-    const response = await axios.delete(
-      `https://crudcrud.com/api/7a84d116056d47f3b57eb161ba5a2852/cart${localStorage
+  const setItems = async () => {
+    const response = await axios.get(
+      `https://crudcrud.com/api/fe32829e41444151a6bce09fb6796095/cart${localStorage
         .getItem("userEmail")
-        .replace(/['@','.']/g, "")}${Id}`
+        .replace(/['@','.']/g, "")}`
     );
+    console.log(response.data, "pppppppp");
+    setList(response.data);
+  };
+
+  const removePRoducts = async (_id) => {
+    const response = await axios.delete(
+      `https://crudcrud.com/api/fe32829e41444151a6bce09fb6796095/cart${localStorage
+        .getItem("userEmail")
+        .replace(/['@','.']/g, "")}/${_id}`
+    );
+    setItems()
     console.log(response.data);
   };
 
   const addproducts = async (item) => {
     const response = await axios.post(
-      `https://crudcrud.com/api/7a84d116056d47f3b57eb161ba5a2852/cart${localStorage
+      `https://crudcrud.com/api/fe32829e41444151a6bce09fb6796095/cart${localStorage
         .getItem("userEmail")
         .replace(/['@','.']/g, "")}`,
       item
     );
-    console.log(response.data);
-    setList([...response.data]);
-    // setItems();
+
+    console.log(response.data, "jjjjjj");
+    setList([...list, item]);
+    setItems();
   };
 
   //Adding Products to the cart
@@ -72,20 +74,21 @@ const ConextProvider = ({ children }) => {
   //   setList([...list, item]);
   // };
 
-  //Removing products from the cart
+  // Removing products from the cart
   // const removePRoducts = (Id) => {
   //   const remove = list.filter((item) => item.id !== Id);
   //   setList(remove);
   // };
 
   //remove all products from the cart
-  const removePRoductsAll = (Id) => {
-    const remove = list.filter((item) => item.id === Id);
-    setList(remove);
-  };
+  // const removePRoductsAll = (Id) => {
+  //   const remove = list.filter((item) => item.id === Id);
+  //   setList(remove);
+  // };
   useEffect(() => {
-    addproducts();
+    setItems();
   }, [loginUserToken]);
+
   return (
     <contextProduct.Provider
       value={{
@@ -97,7 +100,7 @@ const ConextProvider = ({ children }) => {
         LogoutUserHandler: LogoutUserHandler,
         loginUserToken: loginUserToken,
         // setList: setList,
-        removePRoductsAll: removePRoductsAll,
+        // removePRoductsAll: removePRoductsAll,
         handleClickOpen: handleClickOpen,
         open: open,
         handleClose: handleClose,

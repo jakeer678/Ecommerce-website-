@@ -38,15 +38,15 @@ const Contact = () => {
         <div className="container">
           <div className="control">
             <label htmlFor="name">Name</label>
-            <input type="name" ref={nameRef} required/>
+            <input type="name" ref={nameRef} required />
           </div>
           <div className="control">
             <label htmlFor="email">E-Mail</label>
-            <input type="email" ref={emailRef} required/>
+            <input type="email" ref={emailRef} required />
           </div>
           <div className="control">
             <label htmlFor="password">Password</label>
-            <input type="password" ref={passwordRef} required/>
+            <input type="password" ref={passwordRef} required />
           </div>
           <div className="actions">
             <Button type="submit" variant="contained" className="btn">

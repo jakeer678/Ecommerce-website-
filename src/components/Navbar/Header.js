@@ -11,7 +11,7 @@ const Header = () => {
   const location = useLocation();
   console.log(location, "oooooopppp");
   const logout = () => {
-    alert("Are sure you want logout");
+    alert("Are you sure want to logout");
     LogoutUserHandler();
     navigate("/");
   };

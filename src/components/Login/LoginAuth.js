@@ -57,7 +57,7 @@ const LoginAuth = () => {
         // srtoring data in ContextProduct
         alert("success");
         LoginUserHandle(data.idToken, enteredEmail);
-        
+
         navigate("/");
       })
       .catch((error) => {

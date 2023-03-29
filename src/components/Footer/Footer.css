@@ -1,12 +1,36 @@
-.footer{
-    margin-top: 1rem;
-    padding: 1rem;
-    background-color: rgb(235, 195, 64);
-   
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-  color: #fff;
-  padding: 20px;
-  }
+.footer {
+  background-color: #56CCF2;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+ padding: 10px;
+  font-family: "Times New Roman", Times, serif;
+}
+.utube {
+  color: red;
+}
+.facebook {
+  color: rgb(51, 26, 165);
+}
+.instagram {
+  color: rgb(238, 9, 9);
+}
+
+.footer ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+ 
+}
+.footer ul li {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  list-style: none;
+}

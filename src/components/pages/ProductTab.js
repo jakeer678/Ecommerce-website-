@@ -1,8 +1,3 @@
-import { Button } from "@mui/material";
-
-import React, { useContext } from "react";
-import { contextProduct } from "../store/contextstore";
-
 const ProductTab = () => {
   const myStyle = {
     width: "100%",

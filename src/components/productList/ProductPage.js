@@ -6,7 +6,7 @@ import "./ProductPage.css";
 const ProductPage = () => {
   const params = useParams();
 
-  const productDeatail = products?.find((item) => item.id === params.productId);
+  const productDeatail = products?.find((item) => item.id == params.productId);
   console.log(productDeatail, "iiiiii");
   return (
     <div>
@@ -15,7 +15,7 @@ const ProductPage = () => {
         <p>{productDeatail?.title}</p>
         <div className="routespage">
           <img src={productDeatail.imageUrl} alt="img" />
-          <p>{productDeatail.description}</p>
+          <div>{productDeatail.description}</div>
         </div>
       </section>
     </div>

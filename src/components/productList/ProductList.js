@@ -28,7 +28,7 @@ const ProductList = () => {
                   <li>${item?.price}</li>
                 </div>
                 <AddProduct id={item.id} item={item} />
-                {console.log(item,"jakeeeeeeee")}
+                {console.log(item, "jakeeeeeeee")}
               </div>
             </div>
           ))}
@@ -36,7 +36,12 @@ const ProductList = () => {
       </section>
       <section>
         <div className="btnottom">
-          <Button variant="contained" color="secondary" size="medium" onClick={handleClickOpen}>
+          <Button
+            variant="contained"
+            color="secondary"
+            size="medium"
+            onClick={handleClickOpen}
+          >
             see the cart
           </Button>
         </div>

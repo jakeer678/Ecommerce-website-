@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import "./Cartitem.css";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
@@ -11,13 +11,10 @@ const CartItem = () => {
     useContext(contextProduct);
 
   const quantity = list.length;
-console.log(list,"oooiiiiiiiiii")
+  console.log(list, "oooiiiiiiiiii");
   const total = list.reduce((acc, cur) => {
     return acc + cur.price;
   }, 0);
-
-
-  
 
   const totalAmount = total.toFixed(2);
 
