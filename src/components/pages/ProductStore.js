@@ -1,10 +1,13 @@
-import React from "react";
-import ProductList from "../productList/ProductList";
+import React, { lazy, Suspense } from "react";
+
+const ProductList = lazy(() => import("../productList/ProductList"));
 
 const ProductStore = () => {
   return (
     <div>
-      <ProductList />
+      <Suspense fallback={<div>please wait....</div>}>
+        <ProductList />
+      </Suspense>
     </div>
   );
 };

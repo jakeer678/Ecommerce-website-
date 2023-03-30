@@ -9,9 +9,6 @@ const ConextProvider = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   console.log(list, "kkkkkkkkkk");
-  // const userEmail = localStorage.getItem("userEmail").replace(/['@','.']/g,"")
-
-  // console.log(userEmail, "kkkkkkkkkkk")
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -32,7 +29,6 @@ const ConextProvider = ({ children }) => {
   //Removing token from the local storage
   const LogoutUserHandler = () => {
     setLoginUserToken(null);
-
     localStorage.clear();
   };
 
@@ -46,16 +42,18 @@ const ConextProvider = ({ children }) => {
     setList(response.data);
   };
 
+  //Removing Products from the cart
   const removePRoducts = async (_id) => {
     const response = await axios.delete(
       `https://crudcrud.com/api/fe32829e41444151a6bce09fb6796095/cart${localStorage
         .getItem("userEmail")
         .replace(/['@','.']/g, "")}/${_id}`
     );
-    setItems()
+    setItems();
     console.log(response.data);
   };
 
+  //Adding Prouducts from the cart
   const addproducts = async (item) => {
     const response = await axios.post(
       `https://crudcrud.com/api/fe32829e41444151a6bce09fb6796095/cart${localStorage
@@ -69,22 +67,10 @@ const ConextProvider = ({ children }) => {
     setItems();
   };
 
-  //Adding Products to the cart
-  // const addproducts = (item) => {
-  //   setList([...list, item]);
-  // };
-
-  // Removing products from the cart
-  // const removePRoducts = (Id) => {
-  //   const remove = list.filter((item) => item.id !== Id);
-  //   setList(remove);
-  // };
-
-  //remove all products from the cart
-  // const removePRoductsAll = (Id) => {
-  //   const remove = list.filter((item) => item.id === Id);
-  //   setList(remove);
-  // };
+  const removePRoductsAll = (Id) => {
+    const remove = list.filter((item) => item._id === Id);
+    setList(remove);
+  };
   useEffect(() => {
     setItems();
   }, [loginUserToken]);
@@ -99,8 +85,7 @@ const ConextProvider = ({ children }) => {
         LoginUserHandle: LoginUserHandle,
         LogoutUserHandler: LogoutUserHandler,
         loginUserToken: loginUserToken,
-        // setList: setList,
-        // removePRoductsAll: removePRoductsAll,
+        removePRoductsAll: removePRoductsAll,
         handleClickOpen: handleClickOpen,
         open: open,
         handleClose: handleClose,
